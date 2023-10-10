@@ -4,6 +4,7 @@ pipeline {
 	    jdk 'Java17'
 	    maven 'maven3'	
 	}
+	
 	stages{
 	     stage("Cleanup Workspace"){
 		steps {
@@ -28,6 +29,7 @@ pipeline {
 		    sh "mvn test"	
 		}    
 	    }	
+		
 	   stage("Sonarqube Analysis"){
 		steps {
 	            script {
@@ -37,11 +39,11 @@ pipeline {
 		   }		
 		}   
 	     }
+		
            stage("Quality Gate"){
 		steps {
 	            script {
-	        	waitForQualityGate abortPipeline: false, credentialsId: 'sonar' {
-                      }	
+	        	waitForQualityGate abortPipeline: false, credentialsId: 'sonar' 	
 		   }		
 		}   
 	     }
