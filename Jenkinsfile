@@ -9,9 +9,9 @@ pipeline {
 		APP_NAME = "register-app-pipeline"
 		RELEASE = "1.0.0"
 		DOCKER_USER = "bbaludevops"
-		DOCKER_PASS = "dckr_pat_LsT_yVlHlMUEGwtQCVjWfP03ouA"
+		DOCKER_PASS = "dckr_pat_1JrDdgJTBkY9es8ZCbxt8QFVycA"
 		IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
-		IMAGE_TAG = "${RELEASE} - ${BUILD_NUMBER}"
+		IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
 	}
 	
 	stages{
